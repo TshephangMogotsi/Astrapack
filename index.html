@@ -1,263 +1,74 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Astrapack — Buy Prepaid Electricity & Water in Botswana</title>
-<style>body,button,input,textarea{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}</style>
-<style>
-:root {
-  --blue-1: #0a6ebd;
-  --teal:   #0fc4a7;
-  --green:  #3dd68c;
-  --grad:   linear-gradient(135deg,#e8f7ff 0%,#d6f5ef 40%,#e0f4ff 100%);
-  --grad-hero: linear-gradient(120deg,#0a6ebd 0%,#0fc4a7 60%,#3dd68c 100%);
-  --dark:   #0d1b2a;
-  --body:   #2d4059;
-  --muted:  #6b7f99;
-  --border: rgba(10,110,189,0.12);
-  --white:  #ffffff;
-  --card:   rgba(255,255,255,0.82);
+<title>Astra-Pack Holdings — Where Technology Moves Better</title>
+<meta name="description" content="Astra-Pack Holdings — Botswana's specialist in industrial automation, smart metering, CCTV, home automation and prepaid electricity &amp; water tokens. Based in Gaborone.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Astra-Pack Holdings — Where Technology Moves Better">
+<meta property="og:description" content="Industrial automation, smart metering and electronic systems for Botswana. Official smart meter supplier to Botswana Power Corporation.">
+<meta property="og:url" content="https://www.astrapack.co.bw">
+<meta property="og:site_name" content="Astra-Pack Holdings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Astra-Pack Holdings — Where Technology Moves Better">
+<meta name="twitter:description" content="Industrial automation, smart metering and electronic systems for Botswana.">
+<link rel="canonical" href="https://www.astrapack.co.bw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Astra-Pack Holdings",
+  "description": "Industrial automation, smart metering and electronic systems company in Botswana.",
+  "url": "https://www.astrapack.co.bw",
+  "telephone": ["+2673116944", "+26772559145"],
+  "email": "info@astrapack.co.bw",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot 64264, Unit 8, Block B2, Block 3 Industrial",
+    "addressLocality": "Gaborone",
+    "addressCountry": "BW"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00",
+    "closes": "17:00"
+  }
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:var(--body);overflow-x:hidden}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px}
-.logo{display:flex;align-items:center;gap:.45rem;font-weight:800;font-size:1.2rem;color:var(--dark);text-decoration:none}
-.logo-icon{width:28px;height:28px;border-radius:7px;background:var(--grad-hero);display:flex;align-items:center;justify-content:center}
-.logo-icon svg{width:15px;height:15px;color:#fff}
-.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-.nav-links a{font-size:.83rem;font-weight:500;color:var(--body);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--blue-1)}
-.nav-right{display:flex;align-items:center;gap:.75rem}
-.btn-login{font-size:.83rem;font-weight:600;color:var(--blue-1);background:none;border:none;cursor:pointer;padding:.5rem 1rem}
-
-/* Purchase dropdown button */
-.purchase-wrap{position:relative}
-.btn-purchase{background:var(--grad-hero);color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:700;font-size:.82rem;padding:.65rem 1.4rem;border:none;border-radius:100px;cursor:pointer;display:flex;align-items:center;gap:.45rem;box-shadow:0 4px 18px rgba(10,110,189,.3);transition:opacity .2s,transform .15s;white-space:nowrap}
-.btn-purchase:hover{opacity:.92;transform:translateY(-1px)}
-.btn-purchase svg{width:13px;height:13px}
-.chev{transition:transform .2s}
-.drop-menu{display:none;position:absolute;top:calc(100% + 10px);right:0;background:#fff;border-radius:14px;box-shadow:0 16px 48px rgba(10,110,189,.18),0 0 0 1px rgba(10,110,189,.08);min-width:240px;overflow:hidden;z-index:200}
-.drop-menu.open{display:block;animation:dropIn .2s cubic-bezier(.34,1.56,.64,1)}
-@keyframes dropIn{from{opacity:0;transform:translateY(-8px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
-.drop-item{display:flex;align-items:center;gap:.85rem;width:100%;padding:.95rem 1.1rem;background:none;border:none;cursor:pointer;text-align:left;transition:background .15s;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-.drop-item:hover{background:#f4f8fb}
-.drop-item+.drop-item{border-top:1px solid rgba(10,110,189,.07)}
-.drop-icon{width:36px;height:36px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff}
-.drop-icon svg{width:16px;height:16px}
-.drop-label{font-size:.88rem;font-weight:700;color:var(--dark)}
-.drop-sub{font-size:.73rem;color:var(--muted);margin-top:.1rem}
-
-/* HERO */
-.hero{min-height:100vh;background:var(--grad);position:relative;overflow:hidden;display:flex;align-items:center;padding:8rem 3rem 4rem}
-.hero::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(15,196,167,.2) 0%,transparent 70%);top:-200px;right:-100px;pointer-events:none}
-.hero::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(26,159,212,.15) 0%,transparent 70%);bottom:-100px;left:10%;pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
-.hero-label{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-1);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
-.hero-label::before{content:'';display:inline-block;width:24px;height:2px;background:var(--blue-1);border-radius:2px}
-.hero h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--dark);margin-bottom:1.2rem}
-.hero-sub{font-size:.95rem;line-height:1.8;color:var(--body);margin-bottom:2rem;max-width:420px}
-.hero-cta-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.btn-primary-lg{background:var(--grad-hero);color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:700;font-size:.9rem;padding:.9rem 2rem;border:none;border-radius:100px;cursor:pointer;box-shadow:0 6px 24px rgba(10,110,189,.35);transition:opacity .2s,transform .15s;display:flex;align-items:center;gap:.5rem;text-decoration:none}
-.btn-primary-lg:hover{opacity:.9;transform:translateY(-2px)}
-.btn-outline-lg{background:rgba(255,255,255,.7);color:var(--blue-1);font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:600;font-size:.88rem;padding:.9rem 1.8rem;border:1.5px solid rgba(10,110,189,.25);border-radius:100px;cursor:pointer;transition:background .2s,border-color .2s;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
-.btn-outline-lg:hover{background:rgba(255,255,255,.95);border-color:var(--blue-1)}
-.hero-stat-card{background:var(--card);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:1.8rem 2rem;box-shadow:0 12px 40px rgba(10,110,189,.1);display:inline-block;margin-top:2.5rem}
-.stat-label{font-size:.8rem;color:var(--muted);font-weight:500}
-.pay-pill{font-size:.78rem;font-weight:700;color:var(--dark);background:#f0f7ff;border:1.5px solid var(--border);border-radius:6px;padding:.3rem .7rem}
-.hero-visual{position:relative}
-.hero-img-main{width:100%;height:420px;border-radius:24px;overflow:hidden;box-shadow:0 24px 60px rgba(10,110,189,.18)}
-.hero-img-bg{width:100%;height:100%;background:linear-gradient(160deg,#0a6ebd 0%,#0fc4a7 50%,#3dd68c 100%);position:relative;overflow:hidden}
-.hero-img-bg svg{position:absolute;inset:0;width:100%;height:100%}
-.float-badge{position:absolute;bottom:-18px;left:-20px;background:#fff;border-radius:14px;padding:1rem 1.4rem;box-shadow:0 12px 36px rgba(10,110,189,.18);display:flex;align-items:center;gap:.75rem;min-width:200px}
-.float-badge2{position:absolute;top:20px;right:-20px;background:#fff;border-radius:14px;padding:.85rem 1.2rem;box-shadow:0 12px 36px rgba(10,110,189,.14);display:flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:600;color:var(--dark)}
-.badge-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#0a6ebd,#0fc4a7);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff}
-.badge-icon svg{width:20px;height:20px}
-.badge-top{font-size:.72rem;color:var(--muted)}
-.badge-val{font-size:1rem;font-weight:800;color:var(--dark)}
-.dot-live{width:8px;height:8px;border-radius:50%;background:var(--teal);animation:livepulse 1.5s ease-in-out infinite}
-@keyframes livepulse{0%,100%{box-shadow:0 0 0 0 rgba(15,196,167,.4)}50%{box-shadow:0 0 0 6px rgba(15,196,167,0)}}
-
-/* SECTIONS */
-.sec{padding:6rem 3rem}
-.container{max-width:1200px;margin:0 auto}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.sol-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.sec-tag{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-1);margin-bottom:.75rem}
-.sec-title{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.025em;line-height:1.15;color:var(--dark);margin-bottom:1rem}
-.sec-sub{font-size:.92rem;line-height:1.8;color:var(--muted);max-width:500px}
-.learn-more{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:600;color:var(--blue-1);text-decoration:none;margin-top:1.2rem;transition:gap .2s}
-.learn-more:hover{gap:.7rem}
-.learn-more svg{width:16px;height:16px}
-
-/* MISSION */
-.vis-box{width:100%;height:380px;border-radius:20px;position:relative;overflow:visible}
-.vis-box-inner{width:100%;height:100%;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,#1a9fd4 0%,#0fc4a7 100%)}
-.vis-box-inner svg{width:100%;height:100%;opacity:.35}
-.float-chip{position:absolute;right:-24px;bottom:30px;background:#fff;border-radius:16px;padding:1rem 1.3rem;box-shadow:0 16px 48px rgba(10,110,189,.14);display:flex;align-items:center;gap:.75rem}
-.chip-icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#3dd68c,#0fc4a7);display:flex;align-items:center;justify-content:center;color:#fff}
-.chip-icon svg{width:18px;height:18px}
-.chip-label{font-size:.7rem;color:var(--muted)}
-.chip-val{font-size:.95rem;font-weight:700;color:var(--dark)}
-
-/* STATS */
-.stats-band{background:var(--grad-hero);padding:4rem 3rem}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:1200px;margin:0 auto}
-.stat-blk{text-align:center}
-.stat-blk .sn{font-size:2.5rem;font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1;margin-bottom:.35rem}
-.stat-blk .sl{font-size:.8rem;color:rgba(255,255,255,.7);font-weight:500}
-
-/* SOLUTION */
-.solution{background:var(--grad)}
-.sol-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.sol-card{background:var(--card);border:1px solid rgba(255,255,255,.8);border-radius:16px;padding:1.5rem;backdrop-filter:blur(16px);transition:transform .2s,box-shadow .2s}
-.sol-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(10,110,189,.12)}
-.sol-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;color:#fff}
-.sol-card h4{font-size:.9rem;font-weight:700;color:var(--dark);margin-bottom:.3rem}
-.sol-card p{font-size:.78rem;line-height:1.65;color:var(--muted)}
-.sol-vis{width:100%;height:420px;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#0a6ebd 0%,#0fc4a7 100%);display:flex;align-items:center;justify-content:center}
-.sol-vis svg{opacity:.3}
-
-/* BENEFITS */
-.benefit-list{display:flex;flex-direction:column;gap:1.5rem}
-.ben-item{display:flex;gap:1rem;align-items:flex-start}
-.ben-icon{width:44px;height:44px;flex-shrink:0;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff}
-.ben-icon svg{width:20px;height:20px}
-.ben-item h4{font-size:.95rem;font-weight:700;color:var(--dark);margin-bottom:.25rem}
-.ben-item p{font-size:.83rem;line-height:1.7;color:var(--muted)}
-
-/* HOW */
-.how{background:var(--grad)}
-.how-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:3.5rem;gap:2rem;flex-wrap:wrap}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.step-card{background:var(--card);border:1px solid rgba(255,255,255,.8);border-radius:18px;padding:2rem 1.5rem;backdrop-filter:blur(16px);transition:transform .2s;position:relative}
-.step-card:hover{transform:translateY(-4px)}
-.step-card::before{content:attr(data-step);position:absolute;top:1.2rem;right:1.5rem;font-size:2rem;font-weight:800;color:rgba(10,110,189,.08);letter-spacing:-.04em}
-.step-icon{width:48px;height:48px;border-radius:12px;background:var(--grad-hero);display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:1.2rem}
-.step-icon svg{width:22px;height:22px}
-.step-card h4{font-size:.95rem;font-weight:700;color:var(--dark);margin-bottom:.4rem}
-.step-card p{font-size:.82rem;line-height:1.7;color:var(--muted)}
-
-/* CONTACT */
-.contact-vis{height:380px;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,#0a6ebd 0%,#0fc4a7 100%);display:flex;align-items:center;justify-content:center}
-.contact-vis svg{opacity:.25}
-.form-col{display:flex;flex-direction:column;gap:.9rem}
-.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-.fi{width:100%;padding:.8rem 1.1rem;background:#f4f8fb;border:1.5px solid var(--border);border-radius:10px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.88rem;color:var(--dark);outline:none;transition:border-color .2s,box-shadow .2s}
-.fi::placeholder{color:var(--muted)}
-.fi:focus{border-color:var(--blue-1);box-shadow:0 0 0 3px rgba(10,110,189,.1)}
-textarea.fi{resize:vertical;min-height:90px}
-
-/* FOOTER */
-footer{background:var(--dark);padding:3.5rem 3rem 2rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.footer-brand p{font-size:.82rem;line-height:1.75;color:rgba(255,255,255,.4);max-width:240px;margin-top:.8rem}
-.fc-t{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1rem}
-.fc-l{display:flex;flex-direction:column;gap:.55rem}
-.fc-l a{font-size:.83rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
-.fc-l a:hover{color:rgba(255,255,255,.85)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.75rem;color:rgba(255,255,255,.25)}
-.footer-bottom a{color:rgba(255,255,255,.35);text-decoration:none}
-.footer-bottom a:hover{color:rgba(255,255,255,.65)}
-.footer-logo{color:rgba(255,255,255,.85) !important}
-
-/* MODAL OVERLAY */
-.overlay{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s ease}
-.overlay.active{opacity:1;pointer-events:all}
-.ov-bg{position:absolute;inset:0;background:rgba(13,27,42,.65);backdrop-filter:blur(14px)}
-.modal{position:relative;z-index:1;background:#fff;border-radius:24px;width:100%;max-width:520px;overflow:hidden;box-shadow:0 40px 100px rgba(10,110,189,.25);transform:translateY(30px) scale(.96);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
-.overlay.active .modal{transform:translateY(0) scale(1)}
-.modal-top{background:var(--grad-hero);padding:2rem 2.5rem;position:relative;overflow:hidden}
-.modal-top::after{content:'';position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.07);top:-60px;right:-60px;pointer-events:none}
-.modal-top-row{display:flex;align-items:flex-start;justify-content:space-between}
-.modal-ey{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:.3rem}
-.modal-ttl{font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:-.02em}
-.modal-x{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;transition:background .2s;margin-top:2px}
-.modal-x:hover{background:rgba(255,255,255,.35)}
-.modal-x svg{width:14px;height:14px}
-.modal-body{padding:2rem 2.5rem}
-.fg{margin-bottom:1.1rem}
-.fg label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--body);margin-bottom:.4rem}
-.fg input{width:100%;padding:.82rem 1.1rem;background:#f4f8fb;border:1.5px solid var(--border);border-radius:10px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.9rem;color:var(--dark);outline:none;transition:border-color .2s,box-shadow .2s,background .2s}
-.fg input::placeholder{color:var(--muted)}
-.fg input:focus{border-color:var(--blue-1);box-shadow:0 0 0 3px rgba(10,110,189,.1);background:#fff}
-.fg-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-/* Utility selector */
-.util-btns{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.1rem}
-.util-btn{padding:.85rem;border-radius:10px;border:1.5px solid var(--border);background:#f4f8fb;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.88rem;font-weight:700;color:var(--body);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:all .15s}
-.util-btn:hover{border-color:var(--blue-1);color:var(--blue-1)}
-.util-btn svg{width:16px;height:16px}
-/* Preset amounts */
-.presets{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.7rem}
-.pst{padding:.55rem;text-align:center;background:#f4f8fb;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:700;font-size:.82rem;color:var(--body);transition:all .15s}
-.pst:hover{border-color:var(--blue-1);color:var(--blue-1);background:rgba(10,110,189,.06)}
-.pst.sel{background:var(--grad-hero);color:#fff;border-color:transparent}
-/* Submit */
-.btn-submit{width:100%;background:var(--grad-hero);color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:700;font-size:.9rem;padding:1rem;border:none;border-radius:12px;cursor:pointer;box-shadow:0 6px 20px rgba(10,110,189,.3);display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.4rem;transition:opacity .2s,transform .15s}
-.btn-submit:hover{opacity:.92;transform:translateY(-1px)}
-.btn-submit svg{width:15px;height:15px}
-.sec-note{text-align:center;font-size:.73rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:.35rem;margin-top:.85rem}
-.sec-note svg{width:12px;height:12px;color:var(--teal)}
-/* Success */
-.m-success{display:none;padding:3rem 2.5rem;text-align:center}
-.m-success.show{display:block}
-.m-form.hide{display:none}
-.sc-circle{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#3dd68c,#0fc4a7);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;animation:popIn .4s cubic-bezier(.34,1.56,.64,1)}
-@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-.sc-circle svg{width:32px;height:32px;color:#fff}
-.m-success h3{font-size:1.4rem;font-weight:800;color:var(--dark);margin-bottom:.5rem}
-.m-success p{font-size:.88rem;color:var(--muted);line-height:1.7;max-width:300px;margin:0 auto 1.5rem}
-.btn-done{background:var(--dark);color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:700;font-size:.88rem;padding:.9rem 2.2rem;border:none;border-radius:10px;cursor:pointer;transition:background .2s}
-.btn-done:hover{background:#1a2e40}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-.fu{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-.fu.vis{opacity:1;transform:translateY(0)}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  nav{padding:0 1.25rem}
-  .nav-links{display:none}
-  .sec{padding:4rem 1.25rem}
-  .hero{padding:7rem 1.25rem 3rem}
-  .hero-grid,.two-col,.sol-layout{grid-template-columns:1fr;gap:2.5rem}
-  .steps-grid{grid-template-columns:1fr 1fr}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .float-badge,.float-badge2,.float-chip{display:none}
-  .fg-2{grid-template-columns:1fr}
-  .modal-body{padding:1.5rem}
-  .modal-top{padding:1.5rem}
-  .stats-band{padding:3rem 1.25rem}
-  .form-row-2{grid-template-columns:1fr}
-}
-</style>
+</script>
 </head>
 <body>
+<a href="#about" class="skip-nav">Skip to content</a>
+<div class="scroll-bar" id="scrollBar"></div>
 
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">
-    <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-    Astrapack
+    <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+    Astra-Pack
   </a>
-  <ul class="nav-links">
-    <li><a href="#solution">What We Offer</a></li>
-    <li><a href="#benefits">Why Astrapack</a></li>
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#contact">Support</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <button class="btn-login">Sign In</button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
     <div class="purchase-wrap" id="navWrap">
       <button class="btn-purchase" id="navBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        Purchase
-        <svg class="chev" id="navChev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Buy Prepaid
+        <svg class="chev" id="navChev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="drop-menu" id="navMenu">
         <button class="drop-item" id="navElec">
@@ -273,92 +84,177 @@ footer{background:var(--dark);padding:3.5rem 3rem 2rem}
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid">
-    <div style="animation:fadeUp .7s ease both .1s">
-      <div class="hero-label">Prepaid Electricity &amp; Water · Botswana</div>
-      <h1>Zero queues.<br>Any device.<br>Anytime.</h1>
-      <p class="hero-sub">Astrapack is Botswana's easiest way to buy prepaid electricity and water online. Top up your meter in seconds — no queues, no agents, no hassle.</p>
-      <div class="hero-cta-row">
-        <div class="purchase-wrap" id="heroWrap">
-          <button class="btn-primary-lg" id="heroBtn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Purchase
-            <svg class="chev" id="heroChev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="drop-menu" id="heroMenu">
-            <button class="drop-item" id="heroElec">
-              <div class="drop-icon" style="background:linear-gradient(135deg,#0a6ebd,#0fc4a7)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-              <div><div class="drop-label">Electricity</div><div class="drop-sub">Buy a prepaid electricity token</div></div>
-            </button>
-            <button class="drop-item" id="heroWater">
-              <div class="drop-icon" style="background:linear-gradient(135deg,#0fc4a7,#3dd68c)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 2 3 8 3 13a9 9 0 0018 0c0-5-3-11-9-11z"/></svg></div>
-              <div><div class="drop-label">Water</div><div class="drop-sub">Buy a prepaid water token</div></div>
-            </button>
+<!-- HERO CAROUSEL -->
+<section class="hero" id="hero">
+  <button class="carousel-arrow carousel-prev" id="cPrev" aria-label="Previous slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="carousel-arrow carousel-next" id="cNext" aria-label="Next slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+
+  <div style="position:absolute;inset:0;overflow:hidden" id="carouselViewport">
+    <div class="carousel-track" id="carouselTrack">
+
+      <!-- Slide 1: Industrial Automation -->
+      <div class="carousel-slide cs-1">
+        <div class="cs-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(10,110,189,.12) 0%,transparent 70%);top:-150px;right:-100px"></div>
+        <div class="slide-content">
+          <div style="animation:fadeUp .7s ease both .1s">
+            <div class="slide-tag">Industrial Automation</div>
+            <h1>Intelligent Systems for Modern Industry</h1>
+            <p>PLC, HMI & SCADA solutions that transform traditional operations into smart, connected environments — improving productivity and reducing downtime.</p>
+            <div class="slide-cta-row">
+              <a href="#services" class="btn-primary-lg">Explore Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="#contact" class="btn-outline-lg">Talk to Us</a>
+            </div>
+          </div>
+          <div class="slide-visual" style="animation:fadeUp .9s ease both .25s">
+            <div class="slide-vis-box">
+              <div class="slide-vis-inner" style="background:linear-gradient(145deg,#0a6ebd,#0fc4a7)">
+                <svg viewBox="0 0 460 380" width="380" xmlns="http://www.w3.org/2000/svg" opacity=".35">
+                  <rect x="60" y="80" width="340" height="220" rx="8" fill="none" stroke="white" stroke-width="2"/>
+                  <rect x="80" y="100" width="60" height="40" rx="4" fill="white" opacity=".3"/>
+                  <rect x="160" y="100" width="60" height="40" rx="4" fill="white" opacity=".3"/>
+                  <rect x="240" y="100" width="60" height="40" rx="4" fill="white" opacity=".3"/>
+                  <rect x="320" y="100" width="60" height="40" rx="4" fill="white" opacity=".3"/>
+                  <line x1="110" y1="200" x2="110" y2="280" stroke="white" stroke-width="2"/>
+                  <line x1="190" y1="240" x2="190" y2="280" stroke="white" stroke-width="2"/>
+                  <line x1="270" y1="220" x2="270" y2="280" stroke="white" stroke-width="2"/>
+                  <line x1="350" y1="180" x2="350" y2="280" stroke="white" stroke-width="2"/>
+                  <polyline points="110,200 190,240 270,220 350,180" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+                  <circle cx="110" cy="200" r="5" fill="white"/>
+                  <circle cx="190" cy="240" r="5" fill="white"/>
+                  <circle cx="270" cy="220" r="5" fill="white"/>
+                  <circle cx="350" cy="180" r="5" fill="white"/>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
-        <a href="#how" class="btn-outline-lg">How It Works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-      <div class="hero-stat-card" style="animation:fadeUp .7s ease both .4s">
-        <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.4rem">
-          <span class="pay-pill">MyZaka</span>
-          <span class="pay-pill">Orange Money</span>
-          <span class="pay-pill">Smega</span>
-          <span class="pay-pill">Visa</span>
-          <span class="pay-pill">Mastercard</span>
+
+      <!-- Slide 2: Smart Metering -->
+      <div class="carousel-slide cs-2">
+        <div class="cs-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(15,196,167,.15) 0%,transparent 70%);bottom:-100px;right:-50px"></div>
+        <div class="slide-content">
+          <div style="animation:fadeUp .7s ease both .1s">
+            <div class="slide-tag" style="color:var(--teal)">Smart Metering</div>
+            <h1>Pre & Postpaid Metering Solutions</h1>
+            <p>Supplying Botswana Power Corporation with electrical smart meters. We deliver pre/postpaid electricity, water and gas metering systems built for reliability.</p>
+            <div class="slide-cta-row">
+              <a href="#services" class="btn-primary-lg" style="background:linear-gradient(120deg,#0fc4a7,#3dd68c)">Explore Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="#contact" class="btn-outline-lg" style="color:var(--teal);border-color:rgba(15,196,167,.3)">Talk to Us</a>
+            </div>
+          </div>
+          <div class="slide-visual" style="animation:fadeUp .9s ease both .25s">
+            <div class="slide-vis-box">
+              <div class="slide-vis-inner" style="background:linear-gradient(145deg,#0fc4a7,#3dd68c)">
+                <svg viewBox="0 0 460 380" width="380" xmlns="http://www.w3.org/2000/svg" opacity=".35">
+                  <rect x="130" y="60" width="200" height="260" rx="10" fill="none" stroke="white" stroke-width="2"/>
+                  <rect x="150" y="90" width="160" height="80" rx="6" fill="white" opacity=".2"/>
+                  <text x="230" y="138" text-anchor="middle" font-size="28" font-weight="bold" fill="white" font-family="monospace">0042.7</text>
+                  <text x="230" y="158" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.7)" font-family="sans-serif">kWh</text>
+                  <rect x="150" y="190" width="70" height="30" rx="6" fill="white" opacity=".2"/>
+                  <rect x="240" y="190" width="70" height="30" rx="6" fill="white" opacity=".2"/>
+                  <rect x="150" y="235" width="160" height="40" rx="6" fill="white" opacity=".3"/>
+                  <text x="230" y="260" text-anchor="middle" font-size="11" fill="white" font-family="sans-serif">ACTIVE</text>
+                  <circle cx="230" cy="310" r="8" fill="rgba(255,255,255,.4)"/>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="stat-label">We accept all major payment methods</div>
       </div>
-    </div>
-    <div class="hero-visual" style="animation:fadeUp .9s ease both .3s">
-      <div class="hero-img-main">
-        <div class="hero-img-bg">
-          <svg viewBox="0 0 580 420" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="290" cy="390" rx="260" ry="18" fill="rgba(0,0,0,0.12)"/>
-            <circle cx="290" cy="80" r="46" fill="rgba(255,230,100,0.4)"/>
-            <circle cx="290" cy="80" r="30" fill="rgba(255,230,100,0.6)"/>
-            <line x1="290" y1="24" x2="290" y2="14" stroke="rgba(255,230,100,0.8)" stroke-width="3" stroke-linecap="round"/>
-            <line x1="290" y1="146" x2="290" y2="136" stroke="rgba(255,230,100,0.8)" stroke-width="3" stroke-linecap="round"/>
-            <line x1="234" y1="80" x2="224" y2="80" stroke="rgba(255,230,100,0.8)" stroke-width="3" stroke-linecap="round"/>
-            <line x1="356" y1="80" x2="346" y2="80" stroke="rgba(255,230,100,0.8)" stroke-width="3" stroke-linecap="round"/>
-            <g transform="translate(60,220)"><rect width="120" height="80" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/><line x1="0" y1="26" x2="120" y2="26" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="0" y1="53" x2="120" y2="53" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="40" y1="0" x2="40" y2="80" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="80" y1="0" x2="80" y2="80" stroke="rgba(255,255,255,0.2)" stroke-width="1"/></g>
-            <g transform="translate(210,200)"><rect width="160" height="100" rx="4" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/><line x1="0" y1="33" x2="160" y2="33" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="0" y1="66" x2="160" y2="66" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="53" y1="0" x2="53" y2="100" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="106" y1="0" x2="106" y2="100" stroke="rgba(255,255,255,0.2)" stroke-width="1"/></g>
-            <g transform="translate(400,225)"><rect width="120" height="80" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/><line x1="0" y1="26" x2="120" y2="26" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="0" y1="53" x2="120" y2="53" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="40" y1="0" x2="40" y2="80" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="80" y1="0" x2="80" y2="80" stroke="rgba(255,255,255,0.2)" stroke-width="1"/></g>
-            <line x1="480" y1="380" x2="480" y2="160" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
-            <ellipse cx="480" cy="155" rx="5" ry="5" fill="rgba(255,255,255,0.6)"/>
-            <line x1="480" y1="155" x2="480" y2="110" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
-            <line x1="480" y1="155" x2="522" y2="178" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
-            <line x1="480" y1="155" x2="438" y2="178" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+
+      <!-- Slide 3: Home & Commercial Automation -->
+      <div class="carousel-slide cs-3">
+        <div class="cs-orb" style="width:550px;height:550px;background:radial-gradient(circle,rgba(139,92,246,.1) 0%,transparent 70%);top:-100px;left:-50px"></div>
+        <div class="slide-content">
+          <div style="animation:fadeUp .7s ease both .1s">
+            <div class="slide-tag" style="color:#8b5cf6">Home &amp; Commercial Automation</div>
+            <h1>Smart Environments. Seamless Control.</h1>
+            <p>From automated lighting and security systems to boardroom AV and access control — we design and install intelligent environments for homes, offices and commercial spaces.</p>
+            <div class="slide-cta-row">
+              <a href="#services" class="btn-primary-lg" style="background:linear-gradient(120deg,#8b5cf6,#0a6ebd)">Explore Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="#contact" class="btn-outline-lg" style="color:#8b5cf6;border-color:rgba(139,92,246,.25)">Talk to Us</a>
+            </div>
+          </div>
+          <div class="slide-visual" style="animation:fadeUp .9s ease both .25s">
+            <div class="slide-vis-box">
+              <div class="slide-vis-inner" style="background:linear-gradient(145deg,#8b5cf6,#0a6ebd)">
+                <svg viewBox="0 0 460 380" width="380" xmlns="http://www.w3.org/2000/svg" opacity=".35">
+                  <path d="M230 60 L80 170 L80 320 L380 320 L380 170 Z" fill="none" stroke="white" stroke-width="2"/>
+                  <rect x="160" y="220" width="60" height="100" rx="4" fill="white" opacity=".2"/>
+                  <rect x="240" y="220" width="60" height="100" rx="4" fill="white" opacity=".2"/>
+                  <circle cx="160" cy="150" r="15" fill="white" opacity=".3"/>
+                  <circle cx="230" cy="140" r="15" fill="white" opacity=".3"/>
+                  <circle cx="300" cy="150" r="15" fill="white" opacity=".3"/>
+                  <line x1="175" y1="150" x2="215" y2="140" stroke="white" stroke-width="1.5" opacity=".5"/>
+                  <line x1="245" y1="140" x2="285" y2="150" stroke="white" stroke-width="1.5" opacity=".5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="float-badge">
-        <div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <div><div class="badge-top">Token in your hands</div><div class="badge-val">Under 30 seconds</div></div>
+
+      <!-- Slide 4: Security & Safety -->
+      <div class="carousel-slide cs-4">
+        <div class="cs-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(246,166,35,.12) 0%,transparent 70%);bottom:-100px;right:-100px"></div>
+        <div class="slide-content">
+          <div style="animation:fadeUp .7s ease both .1s">
+            <div class="slide-tag" style="color:#d97706">Safety &amp; Security Systems</div>
+            <h1>Protecting What Matters Most</h1>
+            <p>CCTV, access control, fire detection, gas detection and emergency PA systems — integrated security solutions tailored for commercial, industrial and institutional environments.</p>
+            <div class="slide-cta-row">
+              <a href="#services" class="btn-primary-lg" style="background:linear-gradient(120deg,#d97706,#f6a623)">Explore Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="#contact" class="btn-outline-lg" style="color:#d97706;border-color:rgba(217,119,6,.25)">Talk to Us</a>
+            </div>
+          </div>
+          <div class="slide-visual" style="animation:fadeUp .9s ease both .25s">
+            <div class="slide-vis-box">
+              <div class="slide-vis-inner" style="background:linear-gradient(145deg,#d97706,#f6a623)">
+                <svg viewBox="0 0 460 380" width="380" xmlns="http://www.w3.org/2000/svg" opacity=".35">
+                  <path d="M230 50 L120 100 L120 220 C120 290 230 330 230 330 C230 330 340 290 340 220 L340 100 Z" fill="none" stroke="white" stroke-width="2"/>
+                  <polyline points="170,190 210,230 290,150" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="230" cy="190" r="50" fill="none" stroke="white" stroke-width="1.5" opacity=".4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="float-badge2"><span class="dot-live"></span>Available across Botswana</div>
-    </div>
+
+    </div><!-- end track -->
+  </div><!-- end viewport -->
+
+  <div class="carousel-dots" id="carouselDots">
+    <button class="cdot active" data-idx="0" aria-label="Go to slide 1"></button>
+    <button class="cdot" data-idx="1" aria-label="Go to slide 2"></button>
+    <button class="cdot" data-idx="2" aria-label="Go to slide 3"></button>
+    <button class="cdot" data-idx="3" aria-label="Go to slide 4"></button>
   </div>
 </section>
 
-<!-- WHO WE ARE -->
-<section class="sec" style="background:#fff" id="about">
+<!-- ABOUT -->
+<section class="sec" id="about" style="background:#fff">
   <div class="container two-col">
-    <div class="vis-box fu">
+    <div class="vis-box fu-left">
       <div class="vis-box-inner">
-        <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg"><rect x="120" y="120" width="260" height="180" rx="12" fill="white"/><rect x="140" y="140" width="80" height="140" rx="6" fill="rgba(10,110,189,0.15)"/><rect x="240" y="160" width="80" height="120" rx="6" fill="rgba(10,110,189,0.15)"/><rect x="340" y="180" width="20" height="100" rx="4" fill="rgba(10,110,189,0.1)"/><circle cx="250" cy="60" r="35" fill="rgba(255,220,100,0.3)"/><line x1="100" y1="80" x2="400" y2="200" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/></svg>
+        <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg"><circle cx="250" cy="190" r="120" stroke="white" stroke-width="1.5" fill="none"/><circle cx="250" cy="190" r="70" stroke="white" stroke-width="1" fill="none"/><g><circle cx="250" cy="70" r="18" fill="rgba(255,255,255,.25)"/><text x="250" y="76" text-anchor="middle" fill="white" font-size="11" font-weight="bold">PLC</text></g><g><circle cx="370" cy="190" r="18" fill="rgba(255,255,255,.25)"/><text x="370" y="196" text-anchor="middle" fill="white" font-size="10" font-weight="bold">HMI</text></g><g><circle cx="310" cy="300" r="18" fill="rgba(255,255,255,.25)"/><text x="310" y="306" text-anchor="middle" fill="white" font-size="8" font-weight="bold">SCADA</text></g><g><circle cx="190" cy="300" r="18" fill="rgba(255,255,255,.25)"/><text x="190" y="306" text-anchor="middle" fill="white" font-size="9" font-weight="bold">IoT</text></g><g><circle cx="130" cy="190" r="18" fill="rgba(255,255,255,.25)"/><text x="130" y="196" text-anchor="middle" fill="white" font-size="8" font-weight="bold">CCTV</text></g><line x1="250" y1="88" x2="250" y2="120" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><line x1="352" y1="190" x2="320" y2="190" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><line x1="296" y1="284" x2="271" y2="254" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><line x1="204" y1="284" x2="229" y2="254" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><line x1="148" y1="190" x2="180" y2="190" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><circle cx="250" cy="190" r="30" fill="rgba(255,255,255,.15)"/><text x="250" y="195" text-anchor="middle" fill="white" font-size="10" font-weight="bold">ASTRA</text></svg>
       </div>
       <div class="float-chip">
-        <div class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
-        <div><div class="chip-label">Serving customers across</div><div class="chip-val">Botswana 🇧🇼</div></div>
+        <div class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="chip-label">15+ Automation Projects</div><div class="chip-val">Completed</div></div>
       </div>
     </div>
-    <div class="fu" style="transition-delay:.15s">
+    <div class="fu-right" style="transition-delay:.15s">
       <div class="sec-tag">Who We Are</div>
-      <h2 class="sec-title">The simplest way to buy electricity and water online.</h2>
-      <p class="sec-sub">Astrapack is a digital prepaid utility vendor serving customers across Botswana. We're the platform that makes purchasing electricity and water fast, simple, and available 24/7 from any phone or computer. No more trips to the shop. No more queues. Just power and water, when you need it.</p>
-      <a href="#solution" class="learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8l4 4-4 4"/></svg></a>
+      <h2 class="sec-title">Specialized Electronic & IT Systems for Botswana</h2>
+      <p class="sec-sub">Astra-Pack Holdings is a wholly citizen-owned company and results-driven industrial automation provider delivering smart, innovative and reliable solutions from Gaborone. We specialize in transforming traditional operations into intelligent, connected systems — improving productivity, reducing costs, and enhancing decision-making.</p>
+      <p class="sec-sub" style="margin-top:1rem">We work closely with engineers, architects, security specialists and property developers to deliver custom-designed installations across households, office spaces, commercial premises and industrial sites throughout Botswana.</p>
+      <a href="#services" class="learn-more">Our Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8l4 4-4 4"/></svg></a>
     </div>
   </div>
 </section>
@@ -366,99 +262,253 @@ footer{background:var(--dark);padding:3.5rem 3rem 2rem}
 <!-- STATS -->
 <div class="stats-band">
   <div class="stats-grid">
-    <div class="stat-blk fu"><div class="sn">24/7</div><div class="sl">Always Online</div></div>
-    <div class="stat-blk fu" style="transition-delay:.1s"><div class="sn">99.9%</div><div class="sl">Platform Uptime</div></div>
-    <div class="stat-blk fu" style="transition-delay:.2s"><div class="sn">&lt;30s</div><div class="sl">Avg Token Delivery</div></div>
-    <div class="stat-blk fu" style="transition-delay:.3s"><div class="sn">100%</div><div class="sl">All Meter Types Supported</div></div>
+    <div class="stat-blk fu"><div class="sn">15+</div><div class="sl">Automation Projects Completed</div></div>
+    <div class="stat-blk fu" style="transition-delay:.1s"><div class="sn">4</div><div class="sl">Core Service Areas</div></div>
+    <div class="stat-blk fu" style="transition-delay:.2s"><div class="sn">BPC</div><div class="sl">Smart Meter Supplier</div></div>
+    <div class="stat-blk fu" style="transition-delay:.3s"><div class="sn">24/7</div><div class="sl">Maintenance & Support</div></div>
   </div>
 </div>
 
-<!-- WHAT WE OFFER -->
-<section class="sec solution" id="solution">
-  <div class="container sol-layout">
-    <div class="fu">
-      <div class="sec-tag">What We Offer</div>
-      <h2 class="sec-title">Electricity and water, bought online in under a minute</h2>
-      <p class="sec-sub" style="margin-bottom:2.5rem">Astrapack connects you directly to prepaid electricity and water purchases — fast, reliable, and available around the clock from anywhere in Botswana.</p>
-      <div class="sol-cards">
-        <div class="sol-card">
-          <div class="sol-icon" style="background:linear-gradient(135deg,#0a6ebd,#1a9fd4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-          <h4>Prepaid Electricity</h4><p>Buy electricity tokens instantly and receive them on your phone and email within seconds.</p>
-        </div>
-        <div class="sol-card">
-          <div class="sol-icon" style="background:linear-gradient(135deg,#0fc4a7,#3dd68c)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M12 2C6 2 3 8 3 13a9 9 0 0018 0c0-5-3-11-9-11z"/></svg></div>
-          <h4>Prepaid Water</h4><p>Top up your water meter just as easily — same fast process, same instant delivery.</p>
-        </div>
-        <div class="sol-card">
-          <div class="sol-icon" style="background:linear-gradient(135deg,#f6a623,#f6703a)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h4>Safe &amp; Secure</h4><p>Bank-grade encryption on every payment. Your details are never stored on our servers.</p>
-        </div>
-        <div class="sol-card">
-          <div class="sol-icon" style="background:linear-gradient(135deg,#8b5cf6,#0a6ebd)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <h4>All Major Meters</h4><p>Compatible with BPC, WUC, and all major prepaid electricity and water meter types.</p>
-        </div>
-      </div>
+<!-- MISSION & VISION -->
+<section class="sec" style="background:#fff" id="mission">
+  <div class="container">
+    <div class="fu" style="text-align:center;max-width:560px;margin:0 auto 3rem">
+      <div class="sec-tag" style="justify-content:center">Our Direction</div>
+      <h2 class="sec-title" style="text-align:center">Mission &amp; Vision</h2>
     </div>
-    <div class="fu" style="transition-delay:.2s">
-      <div class="sol-vis">
-        <svg viewBox="0 0 400 500" width="320" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="200" width="280" height="200" rx="12" fill="white"/><rect x="80" y="220" width="70" height="160" rx="6" fill="rgba(10,110,189,0.2)"/><rect x="170" y="260" width="70" height="120" rx="6" fill="rgba(10,110,189,0.2)"/><rect x="260" y="240" width="60" height="140" rx="6" fill="rgba(10,110,189,0.2)"/><circle cx="200" cy="100" r="55" fill="rgba(255,220,100,0.3)"/><circle cx="200" cy="100" r="36" fill="rgba(255,220,100,0.5)"/></svg>
+    <div class="mv-grid fu" style="transition-delay:.15s">
+      <div class="mv-card mission">
+        <div style="display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-1);margin-bottom:.8rem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          Our Mission
+        </div>
+        <h3>Maximizing Performance Through Automation</h3>
+        <p>To help organizations maximize performance and profitability by delivering cutting-edge automation solutions, exceptional service, and measurable results. We provide the best technical and electronic systems, systems integration and software development to improve convenience and efficiency.</p>
+        <div class="mv-num">M</div>
+      </div>
+      <div class="mv-card vision">
+        <div style="display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><circle cx="12" cy="12" r="2"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6a6 6 0 010 12"/></svg>
+          Our Vision
+        </div>
+        <h3>Powering the Future of Industry</h3>
+        <p>To power the future of industry through intelligent automation and digital innovation. To be the market leader in design, distribution and implementation of home, commercial and industrial automation systems in Botswana — driving efficiency, productivity and technological advancement across industries.</p>
+        <div class="mv-num" style="color:rgba(15,196,167,.06)">V</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY ASTRAPACK -->
-<section class="sec" style="background:#fff" id="benefits">
+<!-- SERVICES -->
+<section class="sec" style="background:var(--grad)" id="services">
+  <div class="container">
+    <div class="two-col" style="margin-bottom:3.5rem">
+      <div class="fu">
+        <div class="sec-tag">What We Do</div>
+        <h2 class="sec-title">End-to-end Automation &amp; Electronic Systems</h2>
+      </div>
+      <div class="fu" style="transition-delay:.15s">
+        <p class="sec-sub">From smart home installations to large-scale industrial SCADA systems, Astra-Pack delivers custom-designed solutions across four core service areas — all sourced directly from equipment manufacturers to ensure a seamless supply chain.</p>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card fu-scale">
+        <div class="svc-icon" style="background:linear-gradient(135deg,#0a6ebd,#1a9fd4)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h10M7 12h6"/></svg>
+        </div>
+        <h3>Industrial Automation</h3>
+        <p>Transforming industrial operations with high-performance, connected systems — keeping your business ahead of threats and running at peak efficiency.</p>
+        <ul class="svc-list">
+          <li>PLC Programming</li>
+          <li>HMI & SCADA Systems</li>
+          <li>Automated Water Pumps & Telemetry</li>
+          <li>Automated Controlled Systems</li>
+          <li>Control Panel Design & Industrial Networking</li>
+        </ul>
+      </div>
+      <div class="svc-card fu-scale" style="transition-delay:.08s">
+        <div class="svc-icon" style="background:linear-gradient(135deg,#0fc4a7,#3dd68c)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Smart Metering</h3>
+        <p>Official supplier of electrical smart meters to Botswana Power Corporation, delivering metering technology for electricity, water and gas.</p>
+        <ul class="svc-list">
+          <li>Pre/Postpaid Electrical Smart Meters</li>
+          <li>Pre/Postpaid Smart Water Meters</li>
+          <li>Gas Metering Systems</li>
+          <li>Meter Integration & Support</li>
+        </ul>
+      </div>
+      <div class="svc-card fu-scale" style="transition-delay:.16s">
+        <div class="svc-icon" style="background:linear-gradient(135deg,#8b5cf6,#0a6ebd)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Home Automation</h3>
+        <p>Creating comfortable, secure and intelligent living spaces with custom-designed automation solutions for modern homes.</p>
+        <ul class="svc-list">
+          <li>Automated House Lighting & Air Controls</li>
+          <li>Distributed Audio & Home Cinema</li>
+          <li>Automated Security Systems</li>
+          <li>Smart Video Intercoms & HD/IP TV</li>
+          <li>Automated Gas Fireplace</li>
+        </ul>
+      </div>
+      <div class="svc-card fu-scale" style="transition-delay:.24s">
+        <div class="svc-icon" style="background:linear-gradient(135deg,#f6a623,#f6703a)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Commercial &amp; Safety Systems</h3>
+        <p>Professional-grade systems for offices, institutions and commercial buildings — creating interactive, efficient and secure environments.</p>
+        <ul class="svc-list">
+          <li>Boardroom & Meeting Room Automation</li>
+          <li>Access Control & CCTV Systems</li>
+          <li>Fire & Gas Detection Systems</li>
+          <li>PA & Emergency Systems</li>
+          <li>Nurse Call & ICT Installations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="sec" style="background:#fff" id="industries">
+  <div class="container">
+    <div class="two-col" style="align-items:start">
+      <div class="fu">
+        <div class="sec-tag">Industries We Empower</div>
+        <h2 class="sec-title">Built for the sectors that keep Botswana moving</h2>
+        <p class="sec-sub">Our automation and electronic systems are deployed across a broad range of industries — from mining and manufacturing to healthcare and commercial infrastructure.</p>
+      </div>
+      <div class="fu ind-grid" style="transition-delay:.15s">
+        <div class="ind-pill"><div class="ind-dot" style="background:#0a6ebd"></div>Manufacturing</div>
+        <div class="ind-pill"><div class="ind-dot" style="background:#0fc4a7"></div>Mining</div>
+        <div class="ind-pill"><div class="ind-dot" style="background:#3dd68c"></div>Water &amp; Wastewater</div>
+        <div class="ind-pill"><div class="ind-dot" style="background:#f6a623"></div>Energy &amp; Power</div>
+        <div class="ind-pill"><div class="ind-dot" style="background:#8b5cf6"></div>Oil &amp; Gas</div>
+        <div class="ind-pill"><div class="ind-dot" style="background:#e84040"></div>Healthcare</div>
+        <div class="ind-pill"><div class="ind-dot" style="background:#0a6ebd"></div>Education</div>
+        <div class="ind-pill"><div class="ind-dot" style="background:#0fc4a7"></div>Commercial Infrastructure</div>
+        <div class="ind-pill"><div class="ind-dot" style="background:#d97706"></div>Residential</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ASTRA-PACK -->
+<section class="sec" style="background:var(--grad)" id="why-us">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto 3rem" class="fu">
+      <div class="sec-tag" style="justify-content:center">Why Go For Astra-Pack</div>
+      <h2 class="sec-title" style="text-align:center">What sets us apart</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fu">
+        <div class="why-num">1</div>
+        <div>
+          <h4>Customized Services</h4>
+          <p>Every solution is designed around the client's specific request and needs. Our smart technologies provide secure, comfortable and convenient environments tailored to each project.</p>
+        </div>
+      </div>
+      <div class="why-card fu" style="transition-delay:.08s">
+        <div class="why-num">2</div>
+        <div>
+          <h4>Versatility &amp; Efficiency</h4>
+          <p>Our systems adapt to different business needs, modernizing environments and creating interactive workspaces where information is shared quickly — speeding up operations and improving efficiency.</p>
+        </div>
+      </div>
+      <div class="why-card fu" style="transition-delay:.16s">
+        <div class="why-num">3</div>
+        <div>
+          <h4>Improved Productivity</h4>
+          <p>We deliver access to real-time data and high-performance systems with proven reliability, keeping clients a step ahead of potential threats before they arise.</p>
+        </div>
+      </div>
+      <div class="why-card fu" style="transition-delay:.24s">
+        <div class="why-num">4</div>
+        <div>
+          <h4>Advancing Technology</h4>
+          <p>Our technicians stay at the forefront of technological advancement, with the potential to transform industries including healthcare, education and construction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAINTENANCE & SUPPORT -->
+<section class="sec" style="background:#fff" id="support">
   <div class="container two-col">
     <div class="fu">
-      <div class="sec-tag">Why Astrapack</div>
-      <h2 class="sec-title">Skip the queue. Buy power and water wherever you are.</h2>
-      <p class="sec-sub">Thousands of customers across Botswana use Astrapack to avoid the inconvenience of buying electricity and water in person.</p>
-      <a href="#how" class="learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8l4 4-4 4"/></svg></a>
+      <div class="sec-tag">Maintenance &amp; Support</div>
+      <h2 class="sec-title">Full SLA Support for Every System We Install</h2>
+      <p class="sec-sub">Astra-Pack Holdings offers comprehensive maintenance support and Service Level Agreements for all systems supplied — with a multi-tiered approach to ensure your systems stay fully operational.</p>
+      <div class="support-list">
+        <div class="sup-item">
+          <div class="sup-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <p>Operators trained thoroughly on the effective operation of all installed equipment.</p>
+        </div>
+        <div class="sup-item">
+          <div class="sup-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <p>Client maintenance personnel given extensive first-line maintenance training.</p>
+        </div>
+        <div class="sup-item">
+          <div class="sup-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 0112 22a19.79 19.79 0 01-7.82-3 2 2 0 01-2.18-2v-3"/></svg></div>
+          <p>Telephone and online support offered as a first response channel for faults.</p>
+        </div>
+        <div class="sup-item">
+          <div class="sup-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <p>Technicians available at short notice for on-site faults that cannot be resolved remotely.</p>
+        </div>
+        <div class="sup-item">
+          <div class="sup-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg></div>
+          <p>Routine preventative maintenance visits and operator retraining included in all SLAs.</p>
+        </div>
+      </div>
     </div>
-    <div class="benefit-list fu" style="transition-delay:.15s">
-      <div class="ben-item">
-        <div class="ben-icon" style="background:linear-gradient(135deg,#0a6ebd,#1a9fd4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <div><h4>No More Queues</h4><p>Buy electricity or water from your phone, tablet, or computer — no need to visit a shop or wait in line ever again.</p></div>
-      </div>
-      <div class="ben-item">
-        <div class="ben-icon" style="background:linear-gradient(135deg,#0fc4a7,#3dd68c)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div><h4>Always Available</h4><p>Our platform runs 24 hours a day, 7 days a week — including weekends and public holidays. Never run out at a bad time.</p></div>
-      </div>
-      <div class="ben-item">
-        <div class="ben-icon" style="background:linear-gradient(135deg,#f6a623,#f6703a)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
-        <div><h4>Buy What You Need</h4><p>Purchase any amount from as little as P20 — no fixed denominations, always in your control.</p></div>
-      </div>
+    <div class="contact-vis fu" style="transition-delay:.2s">
+      <svg viewBox="0 0 500 380" width="400" xmlns="http://www.w3.org/2000/svg" opacity=".3">
+        <circle cx="250" cy="190" r="130" stroke="white" stroke-width="1.5" fill="none"/>
+        <circle cx="250" cy="190" r="80" stroke="white" stroke-width="1" fill="none"/>
+        <circle cx="250" cy="190" r="30" fill="rgba(255,255,255,.15)"/>
+        <line x1="250" y1="60" x2="250" y2="160" stroke="white" stroke-width="2"/>
+        <line x1="250" y1="220" x2="250" y2="320" stroke="white" stroke-width="2"/>
+        <line x1="120" y1="190" x2="170" y2="190" stroke="white" stroke-width="2"/>
+        <line x1="330" y1="190" x2="380" y2="190" stroke="white" stroke-width="2"/>
+        <circle cx="250" cy="60" r="10" fill="rgba(255,255,255,.4)"/>
+        <circle cx="250" cy="320" r="10" fill="rgba(255,255,255,.4)"/>
+        <circle cx="120" cy="190" r="10" fill="rgba(255,255,255,.4)"/>
+        <circle cx="380" cy="190" r="10" fill="rgba(255,255,255,.4)"/>
+      </svg>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="sec how" id="how">
-  <div class="container">
-    <div class="how-header fu">
-      <div>
-        <div class="sec-tag">How It Works</div>
-        <h2 class="sec-title">Buy electricity or water in 4 simple steps</h2>
-      </div>
-      <button class="btn-primary-lg" id="howBtn" style="align-self:flex-end">Buy Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+<!-- CLIENTS -->
+<section class="clients-sec" id="clients">
+  <div class="inner-pad">
+    <div style="text-align:center;padding:0 3rem" class="fu">
+      <div class="sec-tag" style="justify-content:center">Trusted By</div>
+      <h2 class="sec-title" style="text-align:center">Clients &amp; Partners</h2>
+      <p class="sec-sub" style="margin:0 auto 2.5rem;text-align:center">From diamonds to universities — Astra-Pack systems run across Botswana's most recognised organisations, powered by world-class technology brands.</p>
     </div>
-    <div class="steps-grid">
-      <div class="step-card fu" data-step="01" style="transition-delay:.05s">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg></div>
-        <h4>Enter Your Meter Number</h4><p>Type in your prepaid meter or account number — this tells us exactly which meter to top up.</p>
+
+    <!-- Row 1: Clients -->
+    <div style="margin-bottom:.8rem;padding:0 3rem"><div class="sec-tag">Clients We've Served</div></div>
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <div class="mchip">DTC Botswana</div><div class="mchip">Debswana</div><div class="mchip">BITRI</div><div class="mchip">BIUST</div><div class="mchip">Morox Properties</div><div class="mchip">New Capitol Cinemas</div><div class="mchip">Asphalt Botswana</div><div class="mchip">BNSC</div><div class="mchip">Desai Law Group</div><div class="mchip">Ramalepa Attorneys</div><div class="mchip">VFS Global</div><div class="mchip">Lucara Diamond</div>
+        <!-- duplicate for seamless loop -->
+        <div class="mchip">DTC Botswana</div><div class="mchip">Debswana</div><div class="mchip">BITRI</div><div class="mchip">BIUST</div><div class="mchip">Morox Properties</div><div class="mchip">New Capitol Cinemas</div><div class="mchip">Asphalt Botswana</div><div class="mchip">BNSC</div><div class="mchip">Desai Law Group</div><div class="mchip">Ramalepa Attorneys</div><div class="mchip">VFS Global</div><div class="mchip">Lucara Diamond</div>
       </div>
-      <div class="step-card fu" data-step="02" style="transition-delay:.12s">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <h4>Add Your Contact Details</h4><p>Provide your cell number and email so we can deliver your token to you directly.</p>
-      </div>
-      <div class="step-card fu" data-step="03" style="transition-delay:.19s">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
-        <h4>Choose Amount &amp; Pay</h4><p>Enter how much you want to buy in Pula, then complete your secure online payment.</p>
-      </div>
-      <div class="step-card fu" data-step="04" style="transition-delay:.26s">
-        <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 0112 22a19.79 19.79 0 01-7.82-3 2 2 0 01-2.18-2v-3"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-        <h4>Receive &amp; Load Your Token</h4><p>Your token arrives by SMS and email in under 30 seconds. Enter it on your meter — done.</p>
+    </div>
+
+    <!-- Row 2: Brands (reverse) -->
+    <div style="margin:1.8rem 0 .8rem;padding:0 3rem"><div class="sec-tag">Technology Brands</div></div>
+    <div class="marquee-wrap">
+      <div class="marquee-track rev">
+        <div class="mchip brand">Honeywell</div><div class="mchip brand">Allen-Bradley</div><div class="mchip brand">Siemens</div><div class="mchip brand">Endress+Hauser</div><div class="mchip brand">Suprema</div><div class="mchip brand">Extron</div><div class="mchip brand">Lutron</div><div class="mchip brand">Promethean</div><div class="mchip brand">Akuvox</div><div class="mchip brand">Room Alert</div><div class="mchip brand">Microsoft Teams</div><div class="mchip brand">RCI</div>
+        <!-- duplicate -->
+        <div class="mchip brand">Honeywell</div><div class="mchip brand">Allen-Bradley</div><div class="mchip brand">Siemens</div><div class="mchip brand">Endress+Hauser</div><div class="mchip brand">Suprema</div><div class="mchip brand">Extron</div><div class="mchip brand">Lutron</div><div class="mchip brand">Promethean</div><div class="mchip brand">Akuvox</div><div class="mchip brand">Room Alert</div><div class="mchip brand">Microsoft Teams</div><div class="mchip brand">RCI</div>
       </div>
     </div>
   </div>
@@ -467,24 +517,36 @@ footer{background:var(--dark);padding:3.5rem 3rem 2rem}
 <!-- CONTACT -->
 <section class="sec" style="background:#fff" id="contact">
   <div class="container two-col">
-    <div class="contact-vis fu">
-      <svg viewBox="0 0 500 380" width="400" xmlns="http://www.w3.org/2000/svg"><circle cx="250" cy="190" r="120" stroke="white" stroke-width="1.5" fill="none"/><circle cx="250" cy="190" r="80" stroke="white" stroke-width="1.5" fill="none"/><circle cx="250" cy="190" r="40" stroke="white" stroke-width="2" fill="rgba(255,255,255,0.1)"/><path d="M190 190 L250 140 L310 190 L285 190 L285 240 L215 240 L215 190 Z" fill="rgba(255,255,255,0.3)"/><circle cx="250" cy="190" r="12" fill="rgba(255,255,255,0.8)"/></svg>
+    <div class="fu">
+      <div class="sec-tag">Get In Touch</div>
+      <h2 class="sec-title">Let's Work Together</h2>
+      <p class="sec-sub" style="margin-bottom:1.5rem">Ready to automate, secure or modernise your space? Our team is based in Gaborone and available to consult on any project — large or small.</p>
+      <div class="contact-info-block">
+        <div class="ci-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 0112 22a19.79 19.79 0 01-7.82-3 2 2 0 01-2.18-2v-3"/></svg>+267 311 6944 &nbsp;/&nbsp; +267 72 559 145</div>
+        <div class="ci-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@astrapack.co.bw</div>
+        <div class="ci-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Plot 64264, Unit 8, Block B2, Block 3 Industrial, Gaborone</div>
+        <div class="ci-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>www.astrapack.co.bw</div>
+        <div class="ci-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Monday – Friday &nbsp;·&nbsp; 8:00 AM – 5:00 PM</div>
+      </div>
     </div>
     <div class="fu" style="transition-delay:.15s">
-      <div class="sec-tag">Get In Touch</div>
-      <h2 class="sec-title">Contact us</h2>
-      <p class="sec-sub" style="margin-bottom:2rem">Have a question about your token, payment, or meter? Our support team is ready to help — any time of day.</p>
-      <form class="form-col" onsubmit="return false">
+      <form class="form-col" id="contactForm">
         <div class="form-row-2">
-          <input type="text" placeholder="Your Name" class="fi">
-          <input type="email" placeholder="Email Address" class="fi">
+          <input type="text" name="name" placeholder="Your Name" class="fi" required>
+          <input type="email" name="email" placeholder="Email Address" class="fi" required>
         </div>
-        <input type="text" placeholder="Subject" class="fi">
-        <textarea placeholder="Your message…" class="fi"></textarea>
+        <input type="text" name="subject" placeholder="Subject" class="fi">
+        <textarea name="message" placeholder="Tell us about your project…" class="fi"></textarea>
         <button class="btn-primary-lg" type="submit" style="align-self:flex-start;border:none">
-          Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
         </button>
       </form>
+      <div class="contact-success" id="contactSuccess" role="status" aria-live="polite">
+        <div class="sc-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Message Sent!</h3>
+        <p>Thank you — we'll be in touch within one business day.</p>
+        <button class="btn-done" id="contactAgainBtn">Send Another</button>
+      </div>
     </div>
   </div>
 </section>
@@ -495,18 +557,18 @@ footer{background:var(--dark);padding:3.5rem 3rem 2rem}
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo footer-logo">
-          <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-          Astrapack
+          <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          Astra-Pack
         </a>
-        <p>Botswana's easiest way to buy prepaid electricity and water online. Fast token delivery, secure payments, available 24/7.</p>
+        <p>"Where technology moves better" — a wholly citizen-owned company providing specialized electronic systems and automation solutions across Botswana since 2023.</p>
       </div>
-      <div><div class="fc-t">Buy Utilities</div><div class="fc-l"><a href="#">Prepaid Electricity</a><a href="#">Prepaid Water</a><a href="#">Token Lookup</a><a href="#">Purchase History</a></div></div>
-      <div><div class="fc-t">Company</div><div class="fc-l"><a href="#">About Astrapack</a><a href="#">How It Works</a><a href="#">Careers</a><a href="#">News</a></div></div>
-      <div><div class="fc-t">Support</div><div class="fc-l"><a href="#">Help Centre</a><a href="#">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div></div>
+      <div><div class="fc-t">Services</div><div class="fc-l"><a href="#services">Industrial Automation</a><a href="#services">Smart Metering</a><a href="#services">Home Automation</a><a href="#services">Security Systems</a></div></div>
+      <div><div class="fc-t">Company</div><div class="fc-l"><a href="#about">About Us</a><a href="#mission">Mission &amp; Vision</a><a href="#why-us">Why Astra-Pack</a><a href="#clients">Our Clients</a></div></div>
+      <div><div class="fc-t">Contact</div><div class="fc-l"><a href="#contact">Get In Touch</a><a href="#support">Support &amp; SLA</a><a href="mailto:info@astrapack.co.bw">info@astrapack.co.bw</a><a href="tel:+2673116944">+267 311 6944</a><a href="tel:+26772559145">+267 72 559 145</a></div></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Astrapack. All rights reserved. Registered in Botswana.</span>
-      <div style="display:flex;gap:1.5rem"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+      <span>© 2026 Astra-Pack Holdings. All rights reserved. Registered in Botswana.</span>
+      <div style="display:flex;gap:1.5rem"><a href="#">Privacy</a><a href="#">Terms</a></div>
     </div>
   </div>
 </footer>
@@ -514,47 +576,40 @@ footer{background:var(--dark);padding:3.5rem 3rem 2rem}
 <!-- MODAL -->
 <div class="overlay" id="overlay">
   <div class="ov-bg" id="ovBg"></div>
-  <div class="modal">
-    <div class="m-form" id="mForm">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTtl">
+
+    <!-- STEP 1: Enter meter details -->
+    <div id="mStep1">
       <div class="modal-top">
         <div class="modal-top-row">
           <div>
             <div class="modal-ey">Astrapack · Botswana</div>
             <div class="modal-ttl" id="modalTtl">Buy Prepaid Utility</div>
           </div>
-          <button class="modal-x" id="modalClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <button class="modal-x" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         </div>
       </div>
       <div class="modal-body">
         <form id="rForm">
-
           <div class="fg">
-            <label for="meterNum">Meter / Account Number</label>
-            <input type="text" id="meterNum" placeholder="e.g. 01234567890" inputmode="numeric" autocomplete="off">
-          </div>
-          <div class="fg-2">
-            <div class="fg" style="margin-bottom:0">
-              <label for="cellNum">Cell Phone Number</label>
-              <input type="tel" id="cellNum" placeholder="+267 7X XXX XXX" autocomplete="tel">
-            </div>
-            <div class="fg" style="margin-bottom:0">
-              <label for="emailAddr">Email Address</label>
-              <input type="email" id="emailAddr" placeholder="you@example.com" autocomplete="email">
+            <label for="meterNum">Meter Number</label>
+            <input type="text" id="meterNum" placeholder="e.g. 888000111222" inputmode="numeric" autocomplete="off">
+            <div id="meterErr" style="display:none;margin-top:.45rem;font-size:.78rem;color:#e84040;align-items:center;gap:.35rem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:13px;height:13px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Please enter a valid meter number
             </div>
           </div>
-          <div class="fg" style="margin-top:1.1rem">
-            <label>Purchase Amount</label>
-            <div class="presets">
-              <button type="button" class="pst" data-val="50">P50</button>
-              <button type="button" class="pst" data-val="100">P100</button>
-              <button type="button" class="pst" data-val="200">P200</button>
-              <button type="button" class="pst" data-val="500">P500</button>
-            </div>
-            <input type="number" id="amtVal" placeholder="Or enter a custom amount (min. P20)" min="20" step="1" inputmode="numeric">
+          <div class="fg">
+            <label for="cellNum">Phone</label>
+            <input type="tel" id="cellNum" placeholder="+267 7X XXX XXX" autocomplete="tel">
           </div>
-          <button type="submit" class="btn-submit" id="submitBtn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Confirm &amp; Purchase
+          <div class="fg">
+            <label for="emailAddr">Email</label>
+            <input type="email" id="emailAddr" placeholder="you@example.com" autocomplete="email">
+          </div>
+          <button type="submit" class="btn-submit" id="verifyBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Verify
           </button>
           <div class="sec-note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -563,189 +618,134 @@ footer{background:var(--dark);padding:3.5rem 3rem 2rem}
         </form>
       </div>
     </div>
+
+    <!-- STEP 2: Customer details + amount -->
+    <div id="mStep2" style="display:none">
+      <div class="modal-top">
+        <div class="modal-top-row">
+          <div>
+            <div class="modal-ey">Astrapack · Botswana</div>
+            <div class="modal-ttl" id="step2Ttl">Confirm &amp; Select Amount</div>
+          </div>
+          <button class="modal-x" id="step2Close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <!-- Customer details card -->
+        <div style="background:linear-gradient(135deg,rgba(10,110,189,.07),rgba(15,196,167,.07));border:1.5px solid rgba(10,110,189,.15);border-radius:14px;padding:1.1rem 1.3rem;margin-bottom:1.4rem">
+          <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-1);margin-bottom:.75rem">Customer Details</div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.88rem">
+            <span style="color:var(--muted)">Customer Name:</span>
+            <span style="font-weight:700;color:var(--dark);text-align:right" id="custName">—</span>
+            <span style="color:var(--muted)">Meter No:</span>
+            <span style="font-weight:700;color:var(--dark);text-align:right" id="custMeter">—</span>
+            <span style="color:var(--muted)">Utility:</span>
+            <span style="font-weight:700;color:var(--dark);text-align:right" id="custUtil">—</span>
+          </div>
+          <div style="margin-top:.75rem;padding-top:.75rem;border-top:1px solid rgba(10,110,189,.1);font-size:.75rem;color:var(--muted);font-style:italic">Please verify your customer details before you proceed.</div>
+        </div>
+        <!-- Amount -->
+        <form id="amtForm">
+          <div class="fg">
+            <label>Recharge Amount (BWP)</label>
+            <input type="number" id="amtVal" placeholder="Enter amount" min="20" step="1" inputmode="numeric" style="font-size:1.1rem;font-weight:700;padding:1rem 1.1rem">
+            <div style="font-size:.73rem;color:var(--muted);margin-top:.35rem">minimum recharge of 20 pula</div>
+          </div>
+          <div style="margin-bottom:1rem">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-1);margin-bottom:.65rem">Quick recharge (BWP)</div>
+            <div class="quick-grid">
+              <button type="button" class="qst" data-val="20">20</button>
+              <button type="button" class="qst" data-val="50">50</button>
+              <button type="button" class="qst" data-val="100">100</button>
+              <button type="button" class="qst" data-val="200">200</button>
+              <button type="button" class="qst" data-val="300">300</button>
+              <button type="button" class="qst" data-val="500">500</button>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit" id="proceedBtn">
+            Proceed
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button type="button" id="step2Back" style="width:100%;margin-top:.6rem;background:none;border:none;cursor:pointer;font-size:.82rem;font-weight:600;color:var(--muted);padding:.5rem;font-family:inherit">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- STEP 3: Card payment -->
+    <div id="mStep3" style="display:none">
+      <div class="modal-top" style="background:linear-gradient(120deg,#1a2e40,#0d1b2a)">
+        <div class="modal-top-row">
+          <div>
+            <div class="modal-ey" style="color:rgba(255,255,255,.5)">Secure Payment</div>
+            <div class="modal-ttl">Card Details</div>
+          </div>
+          <button class="modal-x" id="step3Close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div style="background:#f4f8fb;border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.4rem;display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem">Paying for</div>
+            <div id="payDesc" style="font-size:.88rem;font-weight:700;color:var(--dark)">—</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem">Amount</div>
+            <div id="payAmt" style="font-size:1.3rem;font-weight:800;color:var(--blue-1)">P—</div>
+          </div>
+        </div>
+        <form id="payForm">
+          <div class="fg">
+            <label for="cardName">Name on Card</label>
+            <input type="text" id="cardName" placeholder="e.g. John Doe" autocomplete="cc-name">
+          </div>
+          <div class="fg">
+            <label for="cardNum">Card Number</label>
+            <div style="position:relative">
+              <input type="text" id="cardNum" placeholder="1234 5678 9012 3456" maxlength="19" inputmode="numeric" autocomplete="cc-number" style="padding-right:3.5rem">
+              <span id="cardType" style="position:absolute;right:.9rem;top:50%;transform:translateY(-50%);font-size:.75rem;font-weight:700;color:var(--blue-1)"></span>
+            </div>
+          </div>
+          <div class="fg-2">
+            <div class="fg" style="margin-bottom:0">
+              <label for="cardExp">Expiry</label>
+              <input type="text" id="cardExp" placeholder="MM / YY" maxlength="7" inputmode="numeric" autocomplete="cc-exp">
+            </div>
+            <div class="fg" style="margin-bottom:0">
+              <label for="cardCvv">CVV</label>
+              <input type="text" id="cardCvv" placeholder="•••" maxlength="4" inputmode="numeric" autocomplete="cc-csc">
+            </div>
+          </div>
+          <div style="display:flex;gap:.5rem;margin-top:.75rem;align-items:center">
+            <span style="font-size:.72rem;color:var(--muted);font-weight:500">Accepted:</span>
+            <span style="font-size:.72rem;font-weight:700;color:var(--dark);background:#f0f7ff;border:1.5px solid var(--border);border-radius:5px;padding:.2rem .55rem">VISA</span>
+            <span style="font-size:.72rem;font-weight:700;color:var(--dark);background:#f0f7ff;border:1.5px solid var(--border);border-radius:5px;padding:.2rem .55rem">MC</span>
+            <span style="font-size:.72rem;font-weight:700;color:var(--dark);background:#f0f7ff;border:1.5px solid var(--border);border-radius:5px;padding:.2rem .55rem">MyZaka</span>
+            <span style="font-size:.72rem;font-weight:700;color:var(--dark);background:#f0f7ff;border:1.5px solid var(--border);border-radius:5px;padding:.2rem .55rem">Smega</span>
+          </div>
+          <button type="submit" class="btn-submit" id="payBtn" style="margin-top:1.6rem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Pay Now
+          </button>
+          <button type="button" id="step3Back" style="width:100%;margin-top:.6rem;background:none;border:none;cursor:pointer;font-size:.82rem;font-weight:600;color:var(--muted);padding:.5rem;font-family:inherit">← Back</button>
+          <div class="sec-note" style="margin-top:.6rem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            256-bit SSL encrypted · PCI DSS compliant
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
     <div class="m-success" id="mSuccess">
       <div class="sc-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>Purchase Submitted!</h3>
-      <p id="successMsg">Your token is being generated and will arrive on your phone and email within 30 seconds.</p>
+      <p id="successMsg">Payment successful! Your token is being generated and will arrive on your phone and email within 30 seconds.</p>
       <button class="btn-done" id="doneBtn">Done</button>
     </div>
+
   </div>
 </div>
 
-<script>
-(function () {
-  'use strict';
-
-  var selectedUtility = null;
-
-  // ── Element refs ──────────────────────────────────────
-  var overlay    = document.getElementById('overlay');
-  var ovBg       = document.getElementById('ovBg');
-  var mForm      = document.getElementById('mForm');
-  var mSuccess   = document.getElementById('mSuccess');
-  var modalTtl   = document.getElementById('modalTtl');
-  var modalClose = document.getElementById('modalClose');
-  var doneBtn    = document.getElementById('doneBtn');
-  var rForm      = document.getElementById('rForm');
-  var btnElec    = null;
-  var btnWater   = null;
-  var submitBtn  = document.getElementById('submitBtn');
-  var successMsg = document.getElementById('successMsg');
-  var howBtn     = document.getElementById('howBtn');
-
-  // Nav dropdown
-  var navBtn  = document.getElementById('navBtn');
-  var navMenu = document.getElementById('navMenu');
-  var navChev = document.getElementById('navChev');
-  var navElec = document.getElementById('navElec');
-  var navWater= document.getElementById('navWater');
-
-  // Hero dropdown
-  var heroBtn  = document.getElementById('heroBtn');
-  var heroMenu = document.getElementById('heroMenu');
-  var heroChev = document.getElementById('heroChev');
-  var heroElec = document.getElementById('heroElec');
-  var heroWater= document.getElementById('heroWater');
-
-  // ── Dropdown logic ────────────────────────────────────
-  function openDrop(menu, chev) {
-    menu.classList.add('open');
-    chev.style.transform = 'rotate(180deg)';
-  }
-  function closeAllDrops() {
-    [navMenu, heroMenu].forEach(function(m){ m.classList.remove('open'); });
-    [navChev, heroChev].forEach(function(c){ c.style.transform = 'rotate(0deg)'; });
-  }
-
-  navBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var isOpen = navMenu.classList.contains('open');
-    closeAllDrops();
-    if (!isOpen) openDrop(navMenu, navChev);
-  });
-
-  heroBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var isOpen = heroMenu.classList.contains('open');
-    closeAllDrops();
-    if (!isOpen) openDrop(heroMenu, heroChev);
-  });
-
-  document.addEventListener('click', closeAllDrops);
-
-  navElec.addEventListener('click',  function(){ closeAllDrops(); openModal('electricity'); });
-  navWater.addEventListener('click', function(){ closeAllDrops(); openModal('water'); });
-  heroElec.addEventListener('click', function(){ closeAllDrops(); openModal('electricity'); });
-  heroWater.addEventListener('click',function(){ closeAllDrops(); openModal('water'); });
-  howBtn.addEventListener('click',   function(){ openModal('electricity'); });
-
-  // ── Modal open/close ──────────────────────────────────
-  function openModal(type) {
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    if (type) selectUtility(type);
-    var f = document.getElementById('meterNum');
-    if (f) setTimeout(function(){ f.focus(); }, 350);
-  }
-
-  function closeModal() {
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-    setTimeout(function() {
-      mForm.classList.remove('hide');
-      mSuccess.classList.remove('show');
-      rForm.reset();
-      document.querySelectorAll('.pst').forEach(function(b){ b.classList.remove('sel'); });
-      resetUtil();
-    }, 320);
-  }
-
-  ovBg.addEventListener('click', closeModal);
-  modalClose.addEventListener('click', closeModal);
-  doneBtn.addEventListener('click', closeModal);
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
-
-  // ── Utility selector ──────────────────────────────────
-  function resetUtil() {
-    selectedUtility = null;
-    modalTtl.textContent = 'Buy Prepaid Utility';
-  }
-
-  function selectUtility(type) {
-    selectedUtility = type;
-    if (type === 'electricity') {
-      modalTtl.textContent = 'Buy Prepaid Electricity';
-    } else {
-      modalTtl.textContent = 'Buy Prepaid Water';
-    }
-  }
-
-
-
-  // ── Preset amounts ────────────────────────────────────
-  document.querySelectorAll('.pst').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.pst').forEach(function(b){ b.classList.remove('sel'); });
-      btn.classList.add('sel');
-      document.getElementById('amtVal').value = btn.getAttribute('data-val');
-    });
-  });
-
-  // ── Form submit ───────────────────────────────────────
-  rForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var m  = document.getElementById('meterNum').value.trim();
-    var c  = document.getElementById('cellNum').value.trim();
-    var em = document.getElementById('emailAddr').value.trim();
-    var a  = parseInt(document.getElementById('amtVal').value, 10);
-
-    var err = false;
-
-    if (!selectedUtility) {
-      err = true;
-    }
-
-    [['meterNum',m],['cellNum',c],['emailAddr',em]].forEach(function(pair){
-      if (!pair[1]) {
-        err = true;
-        var el = document.getElementById(pair[0]);
-        el.style.borderColor = '#e84040';
-        el.style.boxShadow   = '0 0 0 3px rgba(232,64,64,0.12)';
-        setTimeout(function(){ el.style.borderColor = ''; el.style.boxShadow = ''; }, 1600);
-      }
-    });
-
-    if (!a || a < 20) {
-      err = true;
-      var av = document.getElementById('amtVal');
-      av.style.borderColor = '#e84040';
-      av.style.boxShadow   = '0 0 0 3px rgba(232,64,64,0.12)';
-      setTimeout(function(){ av.style.borderColor = ''; av.style.boxShadow = ''; }, 1600);
-    }
-
-    if (err) return;
-
-    submitBtn.textContent = 'Processing…';
-    submitBtn.disabled = true;
-
-    setTimeout(function() {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Confirm &amp; Purchase';
-      successMsg.textContent = 'Your ' + (selectedUtility === 'electricity' ? 'electricity' : 'water') + ' token is being generated and will arrive on your phone and email within 30 seconds.';
-      mForm.classList.add('hide');
-      mSuccess.classList.add('show');
-    }, 1400);
-  });
-
-  // ── Scroll reveal ─────────────────────────────────────
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(en) {
-      if (en.isIntersecting) { en.target.classList.add('vis'); obs.unobserve(en.target); }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fu').forEach(function(el){ obs.observe(el); });
-
-}());
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>
