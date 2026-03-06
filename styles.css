@@ -90,6 +90,45 @@ nav.scrolled {
 
 .logo-icon svg { width: 15px; height: 15px; color: #fff; }
 
+.site-logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.mlogo {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: .55rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  min-width: 110px;
+  transition: box-shadow .2s, transform .2s;
+  cursor: default;
+  flex-shrink: 0;
+}
+
+.mlogo img {
+  height: 34px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  filter: grayscale(30%) opacity(.85);
+  transition: filter .2s;
+}
+
+.mlogo:hover {
+  box-shadow: 0 6px 20px rgba(10, 110, 189, .12);
+  transform: translateY(-2px);
+}
+
+.mlogo:hover img {
+  filter: grayscale(0%) opacity(1);
+}
+
 .nav-links {
   display: flex;
   align-items: center;
