@@ -83,139 +83,51 @@
   </div>
 </nav>
 
-<!-- HERO CAROUSEL -->
-<section class="hero" id="hero">
-  <button class="carousel-arrow carousel-prev" id="cPrev" aria-label="Previous slide">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <button class="carousel-arrow carousel-next" id="cNext" aria-label="Next slide">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-
-  <div style="position:absolute;inset:0;overflow:hidden" id="carouselViewport">
-    <div class="carousel-track" id="carouselTrack">
-
-      <!-- Slide 1: Industrial Automation -->
-      <div class="carousel-slide cs-1">
-        <div class="cs-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(10,110,189,.12) 0%,transparent 70%);top:-150px;right:-100px"></div>
-        <div class="slide-content">
-          <div style="animation:fadeUp .7s ease both .1s">
-            <div class="slide-tag">Industrial Automation</div>
-            <h1>Intelligent Systems for Modern Industry</h1>
-            <p>PLC, HMI & SCADA solutions that transform traditional operations into smart, connected environments — improving productivity and reducing downtime.</p>
-            <div class="slide-cta-row">
-              <a href="#services" class="btn-primary-lg">Explore Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="#contact" class="btn-outline-lg">Talk to Us</a>
-            </div>
-          </div>
-          <div class="slide-visual" style="animation:fadeUp .9s ease both .25s">
-            <div class="slide-vis-box">
-              <div class="slide-vis-inner" style="background:none">
-                <img src="images/plc.jpg" alt="PLC industrial automation system" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- HERO -->
+<section class="hero-static" id="hero">
+  <div class="hero-container">
+    <div class="hero-top">
+      <h1 class="hero-heading">Intelligent Systems for Modern Industry</h1>
+      <p class="hero-text">The global energy landscape is shifting rapidly. Astrapack harnesses digital infrastructure to connect millions of households and businesses to reliable, prepaid electricity — reducing costs, eliminating barriers, and empowering remote communities.</p>
+    </div>
+    <div class="hero-images">
+      <div class="hero-img-wrap">
+        <img src="images/smart meter.jpg" alt="Smart electricity meter">
       </div>
-
-      <!-- Slide 2: Smart Metering -->
-      <div class="carousel-slide cs-2">
-        <div class="cs-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(15,196,167,.15) 0%,transparent 70%);bottom:-100px;right:-50px"></div>
-        <div class="slide-content">
-          <div style="animation:fadeUp .7s ease both .1s">
-            <div class="slide-tag" style="color:var(--teal)">Smart Metering</div>
-            <h1>Pre & Postpaid Metering Solutions</h1>
-            <p>Supplying Botswana Power Corporation with electrical smart meters. We deliver pre/postpaid electricity, water and gas metering systems built for reliability.</p>
-            <div class="slide-cta-row">
-              <a href="#services" class="btn-primary-lg" style="background:linear-gradient(120deg,#0fc4a7,#3dd68c)">Explore Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="#contact" class="btn-outline-lg" style="color:var(--teal);border-color:rgba(15,196,167,.3)">Talk to Us</a>
-            </div>
-          </div>
-          <div class="slide-visual" style="animation:fadeUp .9s ease both .25s">
-            <div class="slide-vis-box">
-              <div class="slide-vis-inner" style="background:none">
-                <img src="images/smart meter.jpg" alt="Smart electricity meter" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="hero-img-wrap">
+        <img src="images/plc.jpg" alt="Industrial automation technician">
       </div>
-
-      <!-- Slide 3: Home & Commercial Automation -->
-      <div class="carousel-slide cs-3">
-        <div class="cs-orb" style="width:550px;height:550px;background:radial-gradient(circle,rgba(139,92,246,.1) 0%,transparent 70%);top:-100px;left:-50px"></div>
-        <div class="slide-content">
-          <div style="animation:fadeUp .7s ease both .1s">
-            <div class="slide-tag" style="color:#8b5cf6">Home &amp; Commercial Automation</div>
-            <h1>Smart Environments. Seamless Control.</h1>
-            <p>From automated lighting and security systems to boardroom AV and access control — we design and install intelligent environments for homes, offices and commercial spaces.</p>
-            <div class="slide-cta-row">
-              <a href="#services" class="btn-primary-lg" style="background:linear-gradient(120deg,#8b5cf6,#0a6ebd)">Explore Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="#contact" class="btn-outline-lg" style="color:#8b5cf6;border-color:rgba(139,92,246,.25)">Talk to Us</a>
-            </div>
-          </div>
-          <div class="slide-visual" style="animation:fadeUp .9s ease both .25s">
-            <div class="slide-vis-box">
-              <div class="slide-vis-inner" style="background:none">
-                <img src="images/AV.jpg" alt="AV and home automation system" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 4: Security & Safety -->
-      <div class="carousel-slide cs-4">
-        <div class="cs-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(246,166,35,.12) 0%,transparent 70%);bottom:-100px;right:-100px"></div>
-        <div class="slide-content">
-          <div style="animation:fadeUp .7s ease both .1s">
-            <div class="slide-tag" style="color:#d97706">Safety &amp; Security Systems</div>
-            <h1>Protecting What Matters Most</h1>
-            <p>CCTV, access control, fire detection, gas detection and emergency PA systems — integrated security solutions tailored for commercial, industrial and institutional environments.</p>
-            <div class="slide-cta-row">
-              <a href="#services" class="btn-primary-lg" style="background:linear-gradient(120deg,#d97706,#f6a623)">Explore Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="#contact" class="btn-outline-lg" style="color:#d97706;border-color:rgba(217,119,6,.25)">Talk to Us</a>
-            </div>
-          </div>
-          <div class="slide-visual" style="animation:fadeUp .9s ease both .25s">
-            <div class="slide-vis-box">
-              <div class="slide-vis-inner" style="background:none">
-                <img src="images/cctv.jpg" alt="CCTV security camera installation" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- end track -->
-  </div><!-- end viewport -->
-
-  <div class="carousel-dots" id="carouselDots">
-    <button class="cdot active" data-idx="0" aria-label="Go to slide 1"></button>
-    <button class="cdot" data-idx="1" aria-label="Go to slide 2"></button>
-    <button class="cdot" data-idx="2" aria-label="Go to slide 3"></button>
-    <button class="cdot" data-idx="3" aria-label="Go to slide 4"></button>
+    </div>
   </div>
 </section>
+<div class="sec-divider"></div>
 
 <!-- ABOUT -->
 <section class="sec" id="about" style="background:#fff">
-  <div class="container two-col">
-    <div class="vis-box fu-left">
-      <div class="vis-box-inner">
-        <img src="images/Astrapack.jpg" alt="Astra-Pack Holdings" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
+  <div class="container">
+    <h2 class="about-section-heading">Who We Are</h2>
+    <div class="about-grid">
+      <div class="about-images-grid">
+        <div class="about-img-wrap">
+          <img src="images/AV.jpg" alt="AV and automation equipment">
+        </div>
+        <div class="about-img-wrap">
+          <img src="images/Astrapack.jpg" alt="Astra-Pack Holdings">
+        </div>
+        <div class="about-img-wrap">
+          <img src="images/cctv.jpg" alt="CCTV security systems">
+        </div>
+        <div class="about-img-wrap">
+          <img src="images/plc.jpg" alt="PLC industrial automation">
+        </div>
       </div>
-      <div class="float-chip">
-        <div class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><div class="chip-label">15+ Automation Projects</div><div class="chip-val">Completed</div></div>
+      <div class="about-text">
+        <div class="sec-tag">OUR MISSION</div>
+        <h2 class="sec-title">Specialized Electronic &amp; IT Systems for Botswana</h2>
+        <p class="sec-sub">Astra-Pack Holdings is a wholly citizen-owned company and results-driven industrial automation provider delivering smart, innovative and reliable solutions from Gaborone. We specialize in transforming traditional operations into intelligent, connected systems — improving productivity, reducing costs, and enhancing decision-making.</p>
+        <p class="sec-sub" style="margin-top:1rem">We work closely with engineers, architects, security specialists and property developers to deliver custom-designed installations across households, office spaces, commercial premises and industrial sites throughout Botswana.</p>
+        <a href="#services" class="learn-more">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8l4 4-4 4"/></svg></a>
       </div>
-    </div>
-    <div class="fu-right" style="transition-delay:.15s">
-      <div class="sec-tag">Who We Are</div>
-      <h2 class="sec-title">Specialized Electronic & IT Systems for Botswana</h2>
-      <p class="sec-sub">Astra-Pack Holdings is a wholly citizen-owned company and results-driven industrial automation provider delivering smart, innovative and reliable solutions from Gaborone. We specialize in transforming traditional operations into intelligent, connected systems — improving productivity, reducing costs, and enhancing decision-making.</p>
-      <p class="sec-sub" style="margin-top:1rem">We work closely with engineers, architects, security specialists and property developers to deliver custom-designed installations across households, office spaces, commercial premises and industrial sites throughout Botswana.</p>
-      <a href="#services" class="learn-more">Our Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8l4 4-4 4"/></svg></a>
     </div>
   </div>
 </section>
